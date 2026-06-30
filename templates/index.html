@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>VotezPour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Créer un sondage</h1>
+    <form action="/creer" method="POST">
+        <label>Question :</label>
+        <input type="text" name="question" required>
+        <label>Option 1 :</label>
+        <input type="text" name="option1" required>
+        <label>Option 2 :</label>
+        <input type="text" name="option2" required>
+        <label>Option 3 (optionnel) :</label>
+        <input type="text" name="option3">
+        <button type="submit">Créer le sondage</button>
+    </form>
+</body>
+</html>
