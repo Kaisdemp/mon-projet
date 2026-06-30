@@ -16,8 +16,7 @@
 - Design de l'interface (carte centrée, dégradé, barres de résultats animées)
 - Premiers commits poussés sur main
 
-### 🚧 Bloqué sur
-- (à compléter si un blocage survient)
+
 
 ### 🔀 Décisions prises
 - Stack imposée : Python + Flask + SQLite + Debian
@@ -36,12 +35,25 @@
 ---
 
 ## 📅 MERCREDI
-
+- Installation de Flask sur la VM Debian (résolution de l'erreur "externally-managed-environment" avec --break-system-packages)
+- Premier déploiement réussi en local sur la VM
+- Test complet du parcours : création de sondage, vote, affichage des résultats
 
 ---
 
 ## 📅 JEUDI 
 
+- Configuration du mode Bridge sur VirtualBox pour la VM Debian
+- Ouverture du port 5000 avec ufw
+- Modification de app.py pour écouter sur host="0.0.0.0"
+- Mise en place de la gestion des secrets via .env (SECRET_KEY)
+- Désactivation du mode debug (debug=False)
+- Test réussi : application accessible depuis un autre PC sur le réseau local
+- Diagnostic réseau réalisé (ping, curl) pour valider la connectivité
+
+### 🚧 Bloqué sur
+- Erreur "Address already in use" sur macOS (AirPlay Receiver) — résolu en changeant de port
+- ModuleNotFoundError dotenv sur la VM — résolu en réinstallant les dépendances
 ---
 
 

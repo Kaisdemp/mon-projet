@@ -41,11 +41,11 @@ Déployer l'application VotezPour sur une VM Debian et la rendre accessible.
 - [x ] On peut créer un sondage
 - [x ] On peut voter
 - [x] Les résultats s'affichent en direct
-- [ ] (LAN) Accessible depuis un autre PC
+- [x ] (LAN) Accessible depuis un autre PC
 - [ ] (Bonus) Accessible en ligne
 
 ## 🔒 Checklist sécurité appliquée
 - [x] Requêtes SQL paramétrées
-- [ ] Secrets dans .env (ignoré par Git)
-- [ ] debug=False en production
-- [ ] Pare-feu : seul le port 5000 ouvert
+- [x ] Secrets dans .env (ignoré par Git)
+- [x] debug=False en production
+- [x] Pare-feu : seul le port 5000 ouvert
