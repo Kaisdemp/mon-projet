@@ -1,7 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import database
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 database.init_db()
 
 @app.route("/")
@@ -39,4 +44,4 @@ def resultats(code):
     return render_template("resultats.html", sondage=sondage, resultats=resultats)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
