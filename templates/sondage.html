@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ sondage["question"] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>{{ sondage["question"] }}</h1>
-    <form action="/voter/{{ sondage['code_partage'] }}" method="POST">
-        {% for option in options %}
-            <label>
-                <input type="radio" name="option_id" value="{{ option['id'] }}" required>
-                {{ option["texte"] }}
-            </label><br>
-        {% endfor %}
-        <button type="submit">Voter</button>
-    </form>
-    <p>Lien à partager : {{ request.url }}</p>
+    <div class="card">
+        <h1>🗳️ {{ sondage["question"] }}</h1>
+        <form action="/voter/{{ sondage['code_partage'] }}" method="POST">
+            {% for option in options %}
+                <label class="option">
+                    <input type="radio" name="option_id" value="{{ option['id'] }}" required>
+                    {{ option["texte"] }}
+                </label>
+            {% endfor %}
+            <button type="submit">Voter</button>
+        </form>
+        <div class="share-link">🔗 {{ request.url }}</div>
+    </div>
 </body>
 </html>

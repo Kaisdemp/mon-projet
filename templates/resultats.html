@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Résultats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Résultats : {{ sondage["question"] }}</h1>
-    <ul>
-        {% for r in resultats %}
-            <li>{{ r["texte"] }} — {{ r["nb_votes"] }} vote(s)</li>
-        {% endfor %}
-    </ul>
-    <a href="/sondage/{{ sondage['code_partage'] }}">Revoter</a>
+    <div class="card">
+        <h1>📈 {{ sondage["question"] }}</h1>
+        {% set total = resultats | sum(attribute='nb_votes') %}
+        <ul class="results">
+            {% for r in resultats %}
+                <li class="result-item">
+                    <div class="result-label">
+                        <span>{{ r["texte"] }}</span>
+                        <span>{{ r["nb_votes"] }} vote(s)</span>
+                    </div>
+                    <div class="result-bar-bg">
+                        <div class="result-bar" style="width: {{ (r['nb_votes'] / total * 100) if total > 0 else 0 }}%;"></div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="back-link" href="/sondage/{{ sondage['code_partage'] }}">← Revoter</a>
+    </div>
 </body>
 </html>

@@ -6,17 +6,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Créer un sondage</h1>
-    <form action="/creer" method="POST">
-        <label>Question :</label>
-        <input type="text" name="question" required>
-        <label>Option 1 :</label>
-        <input type="text" name="option1" required>
-        <label>Option 2 :</label>
-        <input type="text" name="option2" required>
-        <label>Option 3 (optionnel) :</label>
-        <input type="text" name="option3">
-        <button type="submit">Créer le sondage</button>
-    </form>
+    <div class="card">
+        <h1>📊 Créer un sondage</h1>
+        <form action="/creer" method="POST">
+            <div class="field">
+                <label>Question</label>
+                <input type="text" name="question" placeholder="Quel jour pour la réunion ?" required>
+            </div>
+            <div class="field">
+                <label>Option 1</label>
+                <input type="text" name="option1" placeholder="Lundi 14h" required>
+            </div>
+            <div class="field">
+                <label>Option 2</label>
+                <input type="text" name="option2" placeholder="Mardi 16h" required>
+            </div>
+            <div class="field">
+                <label>Option 3 (optionnel)</label>
+                <input type="text" name="option3" placeholder="Mercredi 10h">
+            </div>
+            <button type="submit">Créer le sondage</button>
+        </form>
+    </div>
 </body>
 </html>
