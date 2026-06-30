@@ -37,10 +37,10 @@ Déployer l'application VotezPour sur une VM Debian et la rendre accessible.
 3. Partager l'URL publique obtenue
 
 ## ✅ Validation
-- [ ] La page d'accueil s'affiche
-- [ ] On peut créer un sondage
-- [ ] On peut voter
-- [ ] Les résultats s'affichent en direct
+- [x ] La page d'accueil s'affiche
+- [x ] On peut créer un sondage
+- [x ] On peut voter
+- [x] Les résultats s'affichent en direct
 - [ ] (LAN) Accessible depuis un autre PC
 - [ ] (Bonus) Accessible en ligne
 
